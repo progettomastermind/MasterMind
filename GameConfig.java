@@ -12,6 +12,6 @@ class GameConfig{
     @Override
     public String toString(){
         String n = new String();
-        return n + "Lunghezza: " + length + "\nTentativi: " + attempts + "\nColori: " + colors;
+        return n + length + "\n" + attempts + "\n" + colors;
     }
 }
