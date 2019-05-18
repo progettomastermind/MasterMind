@@ -8,4 +8,10 @@ class GameConfig{
         this.attempts = attempts;
         this.colors = colors;
     }
+
+    @Override
+    public String toString(){
+        String n = new String();
+        return n + "Lunghezza: " + length + "\nTentativi: " + attempts + "\nColori: " + colors;
+    }
 }
