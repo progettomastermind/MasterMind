@@ -22,7 +22,7 @@ class ConfigHandler{
 
     /**
      * Legge la configurazione del gioco presente nel file selezionato durante la costruzione
-     * @return Configurazione del gioco letta, il riferimento è nullo se ci sono stati errori
+     * @return Configurazione del gioco letta, il riferimento e' nullo se ci sono stati errori
      */
     public GameConfig readConfigs(){
         try{
@@ -42,7 +42,7 @@ class ConfigHandler{
     /**
      * Scrive la configurazione del gioco sul file selezionato durante la costruzione
      * @param data Configurazione da scrivere
-     * @return `true` se il file è stato sovrascritto con successo con la configurazione da salvare, altrimenti `false`
+     * @return `true` se il file e' stato sovrascritto con successo con la configurazione da salvare, altrimenti `false`
      */
     public boolean writeConfigs(GameConfig data){
         if (!config.canWrite()) return false;
