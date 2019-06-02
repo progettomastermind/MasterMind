@@ -9,7 +9,10 @@ class SecretSequence{
 
 
     SecretSequence(int length, int color_amount, boolean is_repeated){
-        this.secret_colors = {0,1,2,3};
+        if (is_repeated)
+            secret_colors=Randomness.getRandomSequence(length, color_amount);
+        else
+            secret_colors=Randomness.getShuffledSequence(length, color_amount);
     }
 
     public int[] generateCheckSequence(int[] sequence){

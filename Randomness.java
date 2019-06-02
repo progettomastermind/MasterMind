@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Randomness{
 
-    public static int[] GetRandomSequence(int length, int color_amount){
+    public static int[] getRandomSequence(int length, int color_amount){
         Random random = new Random();
         int[] seq = new int[length];
         for(int i=0; i<length; i++){
@@ -11,7 +11,7 @@ public class Randomness{
         return seq;
     }
 
-    public static int[] GetShuffledSequence(int length, int color_amount){
+    public static int[] getShuffledSequence(int length, int color_amount){
         Random random = new Random();
         int[] rainbow = new int[color_amount];
         int c;
