@@ -20,15 +20,12 @@ public class Randomness{
         for(int i=0; i<color_amount; i++)
             rainbow[i]=i;
 
-        int[] seq = new int[length];
-
         for(int i=0; i<length; i++){
-            c=i+random.nextInt(color_amount-i);
+            c=random.nextInt(color_amount--);
             tmp=rainbow[i];
             rainbow[i]=rainbow[c];
             rainbow[c]=tmp;
-            seq[i]=rainbow[i];
         }
-        return seq;
+        return rainbow;
     }   
 }
