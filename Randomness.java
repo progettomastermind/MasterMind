@@ -30,11 +30,11 @@ public class Randomness{
         for(int i=0; i<color_amount; i++)   // Viene riempita un array di colori in ordine
             rainbow[i]=i;
 
-        for(int i=0; i<rainbow.length; i++){
-            c=random.nextInt(color_amount--);
+        for(int i=0; i<rainbow.length; i++){    
+            c=random.nextInt(color_amount--);   // Viene generato un indice casuale con intervallo decrescente verso la fine
             tmp=rainbow[i];
-            rainbow[i]=rainbow[c];
-            rainbow[c]=tmp;
+            rainbow[i]=rainbow[c];  // Scambiamo l'elemento che stiamo scorrendo con l'elemento casuale trovato
+            rainbow[c]=tmp;         // L'algoritmo è O(N) con N numero di elementi da mescolare
         }
         return rainbow;
     }   
