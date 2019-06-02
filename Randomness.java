@@ -30,7 +30,7 @@ public class Randomness{
         for(int i=0; i<color_amount; i++)   // Viene riempita un array di colori in ordine
             rainbow[i]=i;
 
-        for(int i=0; i<length; i++){
+        for(int i=0; i<rainbow.length; i++){
             c=random.nextInt(color_amount--);
             tmp=rainbow[i];
             rainbow[i]=rainbow[c];
