@@ -12,7 +12,7 @@ class SecretSequence{
         if (is_repeated)
             secret_colors=Randomness.getRandomSequence(length, color_amount);
         else
-            secret_colors=Randomness.getShuffledSequence(length, color_amount);
+            secret_colors=Randomness.getShuffledSequence(color_amount);
     }
 
     public int[] generateCheckSequence(int[] sequence){

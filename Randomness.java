@@ -11,7 +11,7 @@ public class Randomness{
         return seq;
     }
 
-    public static int[] getShuffledSequence(int length, int color_amount){
+    public static int[] getShuffledSequence(int color_amount){
         Random random = new Random();
         int[] rainbow = new int[color_amount];
         int c;
