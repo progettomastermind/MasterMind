@@ -13,9 +13,14 @@ class GameConfig {
     public int attempts;
 
     /**
-     * Quantità di colori utilizzabili
+     * Quantita' di colori utilizzabili
      */
     public int colors;
+
+    /**
+     * Controlla se i colori sono con ripetizioni o meno
+     */
+    public boolean is_repeated;
 
     /**
      * Crea una configurazione con i parametri forniti
@@ -23,8 +28,9 @@ class GameConfig {
      * @param length
      * @param attempts
      * @param colors
+     * @param is_repeated
      */
-    GameConfig(int length, int attempts, int colors) {
+    GameConfig(int length, int attempts, int colors, boolean is_repeated) {
         this.length = length;
         this.attempts = attempts;
         this.colors = colors;
@@ -36,6 +42,6 @@ class GameConfig {
     @Override
     public String toString() {
         String n = new String();
-        return n + length + "\n" + attempts + "\n" + colors;
+        return n + length + "\n" + attempts + "\n" + colors + "\n" + is_repeated;
     }
 }

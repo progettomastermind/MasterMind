@@ -33,8 +33,9 @@ class ConfigHandler {
             int length = reader.nextInt();
             int attempts = reader.nextInt();
             int colors = reader.nextInt();
+            boolean is_repeated = reader.nextBoolean();
             reader.close();
-            return new GameConfig(length, attempts, colors);
+            return new GameConfig(length, attempts, colors, is_repeated);
         } catch (Exception ex) {
             ex.printStackTrace();
             return null;
