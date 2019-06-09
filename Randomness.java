@@ -32,7 +32,7 @@ public class Randomness {
         for (int i = 0; i < color_amount; i++) // Viene riempita un array di colori in ordine
             rainbow[i] = i;
 
-        for (int i = rainbow.length; i >= 0; i--) {
+        for (int i = rainbow.length - 1; i >= 0; i--) {
             c = random.nextInt(color_amount--); // Viene generato un indice casuale con intervallo decrescente verso la
                                                 // fine
             tmp = rainbow[i];
