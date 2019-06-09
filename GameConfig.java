@@ -1,7 +1,7 @@
 /**
  * Classe che contiene i parametri del gioco
-*/
-class GameConfig{
+ */
+class GameConfig {
     /**
      * Lunghezza sequenza
      */
@@ -19,21 +19,22 @@ class GameConfig{
 
     /**
      * Crea una configurazione con i parametri forniti
-     * @param length 
+     * 
+     * @param length
      * @param attempts
      * @param colors
      */
-    GameConfig(int length, int attempts, int colors){
+    GameConfig(int length, int attempts, int colors) {
         this.length = length;
         this.attempts = attempts;
         this.colors = colors;
     }
 
     /**
-     *  Fornisce l'interpretazione della configurazione da salvare e leggere su file
+     * Fornisce l'interpretazione della configurazione da salvare e leggere su file
      */
     @Override
-    public String toString(){
+    public String toString() {
         String n = new String();
         return n + length + "\n" + attempts + "\n" + colors;
     }
