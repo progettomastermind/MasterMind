@@ -7,6 +7,11 @@ class InputInterface {
     // NoSuchElementException
     private static Scanner keyboard = new Scanner(System.in);
 
+    /**
+     * Legge colori dall'input
+     * @param amount    Quantita' di colori da leggere
+     * @return  Un'array di `amount` colori letti 
+     */
     public static int[] ReadColors(int amount) {
         int[] colors = new int[amount];
         for (int i = 0; i < amount; i++)
