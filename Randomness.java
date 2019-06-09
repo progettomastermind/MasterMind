@@ -12,7 +12,8 @@ public class Randomness {
         Random random = new Random();
         int[] seq = new int[length];
         for (int i = 0; i < length; i++) {
-            seq[i] = random.nextInt(color_amount);
+            seq[i] = random.nextInt(color_amount); // Per ogni elemento dell'array viene generato un numero casuale da 0
+                                                   // a `color_amount` escluso
         }
         return seq;
     }
