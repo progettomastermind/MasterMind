@@ -8,6 +8,7 @@ class SecretSequence {
 
     SecretSequence(int length, int color_amount, boolean is_repeated) {
         // int[] secret_colors = new int[length];
+        this.secret_colors = new int[length];
         if (is_repeated) {
             this.secret_colors = Randomness.getRandomSequence(length, color_amount);
         } else {
@@ -19,7 +20,7 @@ class SecretSequence {
 
     }
 
-    public int[] generateCheckSequence(int[] sequence) {
+    public int[] generateCheck(int[] sequence) {
         int counter_white = 0;
         int counter_black = 0;
         int[] secret_copy = new int[this.secret_colors.length];
@@ -49,5 +50,15 @@ class SecretSequence {
         black_white_amount[0] = counter_black;
         black_white_amount[1] = counter_white;
         return black_white_amount;
+    }
+
+    public String toString() {
+        String r = new String();
+        for (int i = 0; i < this.secret_colors.length; i++) {
+            r += this.secret_colors[i];
+            r += ' ';
+        }
+        r += '\n';
+        return r;
     }
 }
