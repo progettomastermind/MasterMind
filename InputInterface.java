@@ -18,7 +18,10 @@ class InputInterface {
             colors[i] = keyboard.nextInt();
         return colors;
     }
-
+    /**
+     * Legge configurazioni di gioco dall'utente
+     * @return  Configurazioni di gioco lette
+     */
     public static GameConfig readUserConfigs(){
         System.out.println("Quanti slot vuoi che vengano usati?");
         int length = keyboard.nextInt();

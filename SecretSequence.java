@@ -1,10 +1,6 @@
 class SecretSequence {
     private int[] secret_colors;
 
-    /**
-     * 0 vuoto (sbagliato) 1 giusto al posto giusto (pallino nero) 2 giusto al posto
-     * sbagliato (pallino bianco)
-     */
 
     SecretSequence(int length, int color_amount, boolean is_repeated) {
         // int[] secret_colors = new int[length];
@@ -22,7 +18,12 @@ class SecretSequence {
         }
 
     }
-
+    /**
+     * Compara la sequenza segreta con una sequenza esterna di colori, generando il numero di
+     * pallini neri e bianchi
+     * @param sequence  Sequenza di colori da comparare
+     * @return  Restituisce un'array che contiene sempre due numeri di pallini, il primo dei neri, il secondo dei bianchi
+     */
     public int[] generateCheck(int[] sequence) {
         int counter_white = 0;
         int counter_black = 0;
