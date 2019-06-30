@@ -23,7 +23,7 @@ public class Game{
         }
         System.out.println("Il gioco inizia! Hai " + data.attempts + " tentativi.");
         System.out.println("Scrivi " + data.length + " colori separati da spazio, ovvero numeri che vanno da 0 a " + (data.colors - 1));
-        System.out.println("I colori " + (data.is_repeated ? "non " : "") + "possono essere ripetuti");
+        System.out.println("I colori " + (!data.is_repeated ? "non " : "") + "possono essere ripetuti");
         boolean is_completed = false;
         for(; data.attempts > 0; data.attempts--){
             int[] colors = InputInterface.readColors(data.length);
