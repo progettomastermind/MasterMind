@@ -12,6 +12,9 @@ class SecretSequence {
         if (is_repeated) {
             this.secret_colors = Randomness.getRandomSequence(length, color_amount);
         } else {
+            if (length > color_amount){
+                color_amount = length;   // Altrimenti non si potrebbe creare tale array
+            }
             int[] shuffled = Randomness.getShuffledSequence(color_amount);
             for (int i = 0; i < length; i++) {
                 this.secret_colors[i] = shuffled[i];
