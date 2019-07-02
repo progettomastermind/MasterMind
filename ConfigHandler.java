@@ -28,19 +28,24 @@ class ConfigHandler {
      *         stati errori
      */
     public GameConfig readConfigs() {
+        if (!config.isFile()){   // Se il file di config non esiste
+            this.writeConfigs(new GameConfig());    // Creane uno di default
+            return new GameConfig();    // Non serve leggere di nuovo dal file
+        }
         try {
-            Scanner reader = new Scanner(config);
-            int length = reader.nextInt();
+            Scanner reader = new Scanner(config);   // Apri uno scanner sul file
+            int length = reader.nextInt();  // Leggi 3 interi ed un booleano
             int attempts = reader.nextInt();
             int colors = reader.nextInt();
             boolean is_repeated = reader.nextBoolean();
-            reader.close();
+            reader.close(); // Chiudiamo lo scanner
             return new GameConfig(length, attempts, colors, is_repeated);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return null;
+        } catch (Exception ex) {    // In caso di errori nella lettura
+            ex.printStackTrace();   // Scriviamo cosa è successo
+            return null;    // Restituendo null garantiamo il crash dell'applicazione
         }
     }
+
 
     /**
      * Scrive la configurazione del gioco sul file selezionato durante la
@@ -51,15 +56,13 @@ class ConfigHandler {
      *         configurazione da salvare, altrimenti `false`
      */
     public boolean writeConfigs(GameConfig data) {
-        if (!config.canWrite())
-            return false;
-        try {
-            Writer w = new OutputStreamWriter(new FileOutputStream(config));
-            w.write(data.toString());
-            w.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return false;
+        try {   // Se tutto va bene
+            Writer w = new OutputStreamWriter(new FileOutputStream(config));    // Apre un writer per scrivere su file
+            w.write(data.toString());   // Scriviamo sul file la formattazione data dalle configurazioni di gioco
+            w.close();  // Chiudiamo il file
+        } catch (Exception ex) {    // Nel caso c'è stato un errore nel gestire i file
+            ex.printStackTrace();   // Scriviamo cosa è successo
+            return false;  
         }
         return true;
     }

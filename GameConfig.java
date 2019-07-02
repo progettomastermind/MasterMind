@@ -21,6 +21,15 @@ class GameConfig {
      * Controlla se i colori sono con ripetizioni o meno
      */
     public boolean is_repeated;
+    /**
+     * Crea la configurazione di default
+     */
+    GameConfig(){
+        this.length = 4;
+        this.attempts = 10;
+        this.colors = 8;
+        this.is_repeated = false;
+    }
 
     /**
      * Crea una configurazione con i parametri forniti
