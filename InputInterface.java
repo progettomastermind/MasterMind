@@ -25,12 +25,22 @@ class InputInterface {
     public static GameConfig readUserConfigs(){
         System.out.println("Quanti slot vuoi che vengano usati?");
         int length = keyboard.nextInt();
+        
         System.out.println("Quanti tentativi disponibili vuoi?");
         int attempts = keyboard.nextInt();
+        
         System.out.println("Quanti colori diversi possono esserci?");
         int colors = keyboard.nextInt();
+        
         System.out.println("I colori possono essere ripetuti nella sequenza segreta? (true / false)");
         boolean is_repeated = keyboard.nextBoolean();
+
+        if(!is_repeated && length > colors){
+            System.out.println("Queste configurazioni non sono possibili!");
+            System.out.println("Hai a disposizione troppi pochi colori per non fare ripetizioni.");
+            System.out.println("Verranno scelte le configurazioni di default.");
+            return new GameConfig();
+        }
         return new GameConfig(length, attempts, colors, is_repeated);
     }
 }
