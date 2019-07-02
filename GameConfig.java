@@ -34,6 +34,7 @@ class GameConfig {
         this.length = length;
         this.attempts = attempts;
         this.colors = colors;
+        this.is_repeated = is_repeated;
     }
 
     /**
