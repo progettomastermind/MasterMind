@@ -43,6 +43,6 @@ class GameConfig {
     @Override
     public String toString() {
         String n = new String();
-        return n + length + "\n" + attempts + "\n" + colors + "\n" + is_repeated;
+        return n + length + "\n" + attempts + "\n" + colors + "\n" + is_repeated + '\n';
     }
 }
