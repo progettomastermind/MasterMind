@@ -37,9 +37,9 @@ class ConfigHandler {
             int length = reader.nextInt();  // Leggi 3 interi ed un booleano
             int attempts = reader.nextInt();
             int colors = reader.nextInt();
-            boolean is_repeated = reader.nextBoolean();
+            boolean can_repeat_colors = reader.nextBoolean();
             reader.close(); // Chiudiamo lo scanner
-            return new GameConfig(length, attempts, colors, is_repeated);
+            return new GameConfig(length, attempts, colors, can_repeat_colors);
         } catch (Exception ex) {    // In caso di errori nella lettura
             ex.printStackTrace();   // Scriviamo cosa è successo
             return null;    // Restituendo null garantiamo il crash dell'applicazione

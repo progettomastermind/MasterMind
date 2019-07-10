@@ -17,13 +17,13 @@ public class Game{
             }
         }
         GameConfig data = handler.readConfigs();    // Leggiamo le configurazioni dal file (Se non esiste non e' un problema: leggi documentazione funzione)
-        SecretSequence secret_colors = new SecretSequence(data.length, data.colors, data.is_repeated);  // Creiamo la sequenza segreta
+        SecretSequence secret_colors = new SecretSequence(data.length, data.colors, data.can_repeat_colors);  // Creiamo la sequenza segreta
         if (debug_mode){    // Scriviamola nel caso le impostazioni di debug sono attive
             System.out.println("Debug: sequenza segreta: " + secret_colors);
         }
         System.out.println("Il gioco inizia! Hai " + data.attempts + " tentativi.");
         System.out.println("Scrivi " + data.length + " colori separati da spazio, ovvero numeri che vanno da 0 a " + (data.colors - 1));
-        System.out.println("I colori " + (!data.is_repeated ? "non " : "") + "possono essere ripetuti");    // ? : viene detto operatore ternario (Spiegazione a parte)
+        System.out.println("I colori " + (!data.can_repeat_colors ? "non " : "") + "possono essere ripetuti");    // ? : viene detto operatore ternario (Spiegazione a parte)
         boolean is_completed = false;   // Serve un booleano da inizializzare per capire se a fine ciclo il gioco sia vinto o perso
         for(int attempts = 0; attempts < data.attempts; attempts++){
             int[] colors = InputInterface.readColors(data.length);  // Leggiamo i colori dall'utente

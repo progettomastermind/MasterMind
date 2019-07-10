@@ -20,7 +20,7 @@ class GameConfig {
     /**
      * Controlla se i colori sono con ripetizioni o meno
      */
-    public boolean is_repeated;
+    public boolean can_repeat_colors;
     /**
      * Crea la configurazione di default
      */
@@ -28,7 +28,7 @@ class GameConfig {
         this.length = 4;
         this.attempts = 10;
         this.colors = 8;
-        this.is_repeated = false;
+        this.can_repeat_colors = false;
     }
 
     /**
@@ -37,13 +37,13 @@ class GameConfig {
      * @param length
      * @param attempts
      * @param colors
-     * @param is_repeated
+     * @param can_repeat_colors
      */
-    GameConfig(int length, int attempts, int colors, boolean is_repeated) {
+    GameConfig(int length, int attempts, int colors, boolean can_repeat_colors) {
         this.length = length;
         this.attempts = attempts;
         this.colors = colors;
-        this.is_repeated = is_repeated;
+        this.can_repeat_colors = can_repeat_colors;
     }
 
     /**
@@ -52,6 +52,6 @@ class GameConfig {
     @Override
     public String toString() {
         String n = new String();
-        return n + length + "\n" + attempts + "\n" + colors + "\n" + is_repeated + '\n';
+        return n + length + "\n" + attempts + "\n" + colors + "\n" + can_repeat_colors + '\n';
     }
 }

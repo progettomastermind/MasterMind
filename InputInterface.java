@@ -33,14 +33,14 @@ class InputInterface {
         int colors = keyboard.nextInt();
         
         System.out.println("I colori possono essere ripetuti nella sequenza segreta? (true / false)");
-        boolean is_repeated = keyboard.nextBoolean();
+        boolean can_repeat_colors = keyboard.nextBoolean();
 
-        if(!is_repeated && length > colors){
+        if(!can_repeat_colors && length > colors){
             System.out.println("Queste configurazioni non sono possibili!");
             System.out.println("Hai a disposizione troppi pochi colori per non fare ripetizioni.");
             System.out.println("Verranno scelte le configurazioni di default.");
             return new GameConfig();
         }
-        return new GameConfig(length, attempts, colors, is_repeated);
+        return new GameConfig(length, attempts, colors, can_repeat_colors);
     }
 }

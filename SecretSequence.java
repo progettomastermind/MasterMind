@@ -2,10 +2,10 @@ class SecretSequence {
     private int[] secret_colors;
 
 
-    SecretSequence(int length, int color_amount, boolean is_repeated) {
+    SecretSequence(int length, int color_amount, boolean can_repeat_colors) {
         // int[] secret_colors = new int[length];
         this.secret_colors = new int[length];
-        if (is_repeated) {
+        if (can_repeat_colors) {
             this.secret_colors = Randomness.getRandomSequence(length, color_amount);
         } else {
             if (length > color_amount){
