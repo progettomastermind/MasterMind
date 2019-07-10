@@ -25,10 +25,10 @@ public class Game{
         System.out.println("Scrivi " + data.length + " colori separati da spazio, ovvero numeri che vanno da 0 a " + (data.colors - 1));
         System.out.println("I colori " + (!data.is_repeated ? "non " : "") + "possono essere ripetuti");
         boolean is_completed = false;
-        for(; data.attempts > 0; data.attempts--){
+        for(int attempts = 0; attempts < data.attempts; attempts++){
             int[] colors = InputInterface.readColors(data.length);
             int[] black_white = secret_colors.generateCheck(colors);
-            System.out.println("Pallini");
+            System.out.print("Tentativo " + String.format("%02d", attempts + 1) + "/" + String.format("%02d", data.attempts) + " | ");
             System.out.println("Neri: " + black_white[0] + ", Bianchi: " + black_white[1]);
             if(black_white[0] == data.length){
                 is_completed = true;
