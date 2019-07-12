@@ -28,24 +28,27 @@ class SecretSequence {
         int counter_white = 0;
         int counter_black = 0;
         int[] secret_copy = new int[this.secret_colors.length];
-        for (int i = 0; i < secret_copy.length; i++)
+        int[] sequence_copy = new int[sequence.length];
+        for (int i = 0; i < secret_copy.length; i++)    // Creiamo copie degli array perchè non vogliamo modificare i valori di input
             secret_copy[i] = this.secret_colors[i];
+        for (int i = 0; i < sequence_copy.length; i++)
+            sequence_copy[i] = sequence[i];
 
-        for (int i = 0; i < sequence.length; i++)
-            if (secret_copy[i] == sequence[i]) {
+        for (int i = 0; i < sequence_copy.length; i++)
+            if (secret_copy[i] == sequence_copy[i]) {
                 counter_black++;
                 secret_copy[i] = -1; // Valore speciale, colore segnato
-                sequence[i] = -1;
+                sequence_copy[i] = -1;
             } // Se sono uguali metti il pallino nero
 
         for (int i = 0; i < secret_copy.length; i++) {
             if (secret_copy[i] == -1)
                 continue;
-            for (int j = 0; j < sequence.length; j++) {
-                if (secret_copy[i] == sequence[j]) {
+            for (int j = 0; j < sequence_copy.length; j++) {
+                if (secret_copy[i] == sequence_copy[j]) {
                     counter_white++;
                     secret_copy[i] = -1; // Valore speciale, colore segnato
-                    sequence[j] = -1;
+                    sequence_copy[j] = -1;
                     break; // Continuo con il prossimo colore segreto
                 }
             }
