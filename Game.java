@@ -19,7 +19,7 @@ public class Game{
         GameConfig data = handler.readConfigs();    // Leggiamo le configurazioni dal file (Se non esiste non e' un problema: leggi documentazione funzione)
         SecretSequence secret_colors = new SecretSequence(data.length, data.colors, data.can_repeat_colors);  // Creiamo la sequenza segreta
         if (debug_mode){    // Scriviamola nel caso le impostazioni di debug sono attive
-            System.out.println("Debug: sequenza segreta: " + secret_colors);
+            System.out.println("Debug: sequenza segreta: " + secret_colors + "\n");
         }
         System.out.println("Il gioco inizia! Hai " + data.attempts + " tentativi.");
         System.out.println("Scrivi " + data.length + " colori separati da spazio, ovvero numeri che vanno da 0 a " + (data.colors - 1) + ".");

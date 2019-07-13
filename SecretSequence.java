@@ -59,13 +59,16 @@ class SecretSequence {
         return black_white_amount;
     }
 
+    /**
+     * Permette di scrivere la sequenza segreta in caso di debug
+     */
+    @Override
     public String toString() {
         String r = new String();
         for (int i = 0; i < this.secret_colors.length; i++) {
             r += this.secret_colors[i];
             r += ' ';
         }
-        r += '\n';
         return r;
     }
 }
