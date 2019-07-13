@@ -28,8 +28,15 @@ public class Game{
         boolean is_completed = false;   // Serve un booleano da inizializzare per capire se a fine ciclo il gioco sia vinto o perso
         for(int attempts = 0; attempts < data.attempts; attempts++){
             int[] colors = InputInterface.readColors(data.length);  // Leggiamo i colori dall'utente
-            int[] black_white = secret_colors.generateCheck(colors);   
-            System.out.print("Tentativo " + String.format("%02d", attempts + 1) + "/" + String.format("%02d", data.attempts) + " | ");
+            int[] black_white = secret_colors.generateCheck(colors);
+
+            String display_colors = new String();   // Implementazione uguale al toString in SecretSequence
+            for (int i = 0; i < colors.length; i++) {
+                display_colors += colors[i];
+                display_colors += ' ';
+            }
+
+            System.out.print("Tentativo " + String.format("%02d", attempts + 1) + "/" + String.format("%02d", data.attempts) + " | " + display_colors + "| ");
             System.out.println("Neri: " + black_white[0] + ", Bianchi: " + black_white[1]);
             if(black_white[0] == data.length){  // Se ci sono tanti pallini neri quanti slot si sono indovinati tutti i colori nel posto giusto
                 is_completed = true;
