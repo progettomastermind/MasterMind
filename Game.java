@@ -23,7 +23,7 @@ public class Game{
         }
         System.out.println("Il gioco inizia! Hai " + data.attempts + " tentativi.");
         System.out.println("Scrivi " + data.length + " colori separati da spazio, ovvero numeri che vanno da 0 a " + (data.colors - 1) + ".");
-        System.out.println("Scrivendo numeri >= " + data.colors + " questi non verranno considerati.");
+        System.out.println("Numeri >= " + data.colors + " o negativi corrispondono a colori garantiti non comparire nel codice segreto.");
         System.out.println("I colori " + (!data.can_repeat_colors ? "non " : "") + "possono essere ripetuti.\n");    // ? : viene detto operatore ternario (Spiegazione a parte)
         boolean is_completed = false;   // Serve un booleano da inizializzare per capire se a fine ciclo il gioco sia vinto o perso
         for(int attempts = 0; attempts < data.attempts; attempts++){
