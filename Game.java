@@ -1,3 +1,6 @@
+/**
+ * Classe principale del progetto: compila questa ed esegui questa per utilizzarlo.
+ */
 public class Game{
     public static void main(String[] Args){
         ConfigHandler handler = new ConfigHandler();    // Inizializziamo il ConfigHandler qui perchè ci serve in caso di opzione `-s`

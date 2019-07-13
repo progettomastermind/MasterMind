@@ -1,5 +1,8 @@
 import java.util.Random;
 
+/**
+ * Classe utilizzata per generare sequenze casuali e mescolamenti.
+ */
 public class Randomness {
     /**
      * Crea un array casuale (con possibili ripetizioni) di colori

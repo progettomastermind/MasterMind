@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
+/**
+ * Classe che gestisce l'input dall'utente.
+ */
 class InputInterface {
-    // This needs to be static because closing a scanner will also close the input
-    // stream
-    // This means you cannot close it twice or you'll run into a
-    // NoSuchElementException
+    // Questa variabile deve essere statica perchè chiudere la chiusura dello scanner causa anche la chiusura dello stream al suo interno.
+    // Questo significa che non puoi chiuderlo due volte nel caso di stdin altrimenti causerebbe un'eccezione NoSuchElementException
     private static Scanner keyboard = new Scanner(System.in);
 
     /**

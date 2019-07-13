@@ -5,7 +5,7 @@ import java.io.Writer;
 import java.io.OutputStreamWriter;
 
 /**
- * Classe per salvare e caricare le configurazioni di gioco tramite file
+ * Classe per salvare e caricare le configurazioni di gioco tramite file.
  */
 class ConfigHandler {
     /**

@@ -1,7 +1,12 @@
+/**
+ * Classe per gestire la sequenza segreta utilizzata nel gioco.
+ */
 class SecretSequence {
     private int[] secret_colors;
 
-
+    /**
+     * Crea la sequenza segreta utilizzando i parametri forniti: internamente viene generata casualmente.
+     */
     SecretSequence(int length, int color_amount, boolean can_repeat_colors) {
         // int[] secret_colors = new int[length];
         this.secret_colors = new int[length];
